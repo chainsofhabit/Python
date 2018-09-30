@@ -1,0 +1,11 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                   +
+       welcome aaa inter student manager system
++                                                   +
++                  1. Add Student                   +
++                  2. Find Student                  +
++                  3. Delete Student                +
++                  4. Revise StudentInfo            +
++                  5. Back                          +
++                                                   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++
