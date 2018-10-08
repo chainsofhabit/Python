@@ -1,0 +1,30 @@
+ls-list directory contents 列出文件夹内容
+clear-清屏
+who-谁连接
+Shell-人机对话的交互式环境
+bash-
+kill -9  --强行杀死
+adduser-创建用户
+passwd-修改密码
+userdel-删除用户
+su-switch user 切换用户
+sudo-以超级管理员身份执行
+cat-concatenate-连接多个文件并显示到标准输出
+cd- change directory-改变
+wget -下载页面
+cat index.html-打开网页
+cat -n index.html -加行编号
+history-列出历史命令
+！+历史命令编号-重新执行该命令
+history -c  --清除历史命令
+mkdir-make directories 创建文件夹
+redir-remove directories 删除空文件夹
+cp-拷贝文件
+rm-删除文件
+cp -r +文件夹-拷贝文件夹
+mv -move 剪切文件
+echo -回声
+date- 查看系统事件日期
+cal- calender 查看日历
+head/tail-查看文件的前面/后面部分
+less/more-分屏查看文件
