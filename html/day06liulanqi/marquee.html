@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h1{
+				background-color: aquamarine;
+				font-size: 1cm;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="text" class="foo">欢迎来到千峰教育成都校区Python就业班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+		<script type="text/javascript">
+			//var h1 = document.querySelectorAll(".foo")[0];
+			//var h1 = document.querySelector(".foo");
+			var h1 = document.getElementsByTagName("h1")[0];
+			//var h1 = document.getElementsByClassName("foo")[0];
+			//var h1 = document.getElementById("text");
+			function show(){
+				var str = h1.textContent
+				str = str.substring(1) + str.charAt(0);
+				h1.textContent = str
+			}
+			
+//			show();
+			window.setInterval(show,250)
+		</script>
+	</body>
+</html>

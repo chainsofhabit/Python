@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#div1{
+				height: 100px;
+				background-color: white;
+				color: red;
+				text-align: center;
+				margin: auto;
+				line-height: 100px;
+				font-size: 50px;
+			}
+			#div2{
+				border: 0;
+				color: white;
+				/*background-color: red;*/
+				border-radius: 2px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="div1">
+			<p id="name"></p>
+			
+		</div>
+		<div id="div2">
+			<button id="button1" onclick="start()">开始</button>
+			<button id="button2" onclick="stop()">停止</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var names = ["曹晓芹", "吕耐芯", "李涵", 
+			"魏世强", "樊振霖", "何羽","龙汉", "唐小富","吴亮",
+			"廖鸿业", "吕皓洁", "黄峰", "邓森中", "冉钊", "曾德裕", 
+			"李萌", "江秀成", "李祥", "王磊", "刘彦材", "陈虹州", 
+			"唐宏进", "王建平", "李俊橙", "于梦娇", "王龙", "刘诗意", 
+			 "殷安好",  "刘欢", "任思宇", "张昆", "何翎枫"
+];
+		var num = 0;
+		var name1 = document.getElementById("name");
+		var theName;
+		name1.textContent = names[num];
+		function showName(){
+			var name2 = names[num];
+			name1.textContent = name2;
+			num += 1;
+			if(num == names.length){
+				num = 0;
+			}
+			theName = window.setTimeout(function(){showName()},40);
+		}
+		function start(){
+			showName();
+		}
+		function stop(){
+			window.clearTimeout(theName);
+		}
+	</script>
+</html>

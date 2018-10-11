@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#name{
+				width: 200px;
+				height: 50px;
+				font: 36px/50px "微软雅黑";
+				margin: 10px auto;
+				background-color: red;
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="name"></p>
+		<script type="text/javascript">
+			var names = ["曹晓芹", "吕耐芯", "李涵", 
+			"魏世强", "樊振霖", "何羽","龙汉", "唐小富","吴亮",
+			"廖鸿业", "吕皓洁", "黄峰", "邓森中", "冉钊", "曾德裕", 
+			"李萌", "江秀成", "李祥", "王磊", "刘彦材", "陈虹州", 
+			"唐宏进", "王建平", "李俊橙", "于梦娇", "王龙", "刘诗意", 
+			 "殷安好",  "刘欢", "任思宇", "张昆", "何翎枫"];
+			var p = document.getElementById("name");
+			var counter = parseInt(Math.random() * 10 + 40);
+			var interval = 50;
+			function callName(){
+				var index = parseInt(Math.random() * names.length + 1);
+				p.textContent = names[index];
+				counter -= 1;
+				if(counter > 0){
+					interval += 10
+					setTimeout(callName,50);
+				}
+			}
+			window.setTimeout(callName,interval);
+//			setTimeout(function (){
+//				var index = parseInt(Math.random() * names.length + 1);
+//				p.textContent = names[index];
+//				counter -= 1;
+//				if(counter > 0){
+//					setTimeout(arguments.callee,50);
+//			},50);
+		</script>
+	</body>
+</html>

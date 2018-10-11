@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button id="button1">按钮1</button>
+		<script src = "js/mylib.js"></script>
+		<script type="text/javascript">
+			var button1 = document.getElementById("button1");
+			//绑定事件的回调函数（callback function）
+			//你知道这个事件发生的时候要做什么，但是不知道事件什么时候发生
+			//这个时候都是通过绑定回调函数将来由其他地方来调用该函数
+			bind(button1,"click",sayHello);
+			bind(button1,"click",sayGoodbye);
+			bind(button1,"click",function(){
+				unbind(button1,"click",sayHello)
+			});
+//			if(button1.addEventListener){
+//				button1.addEventListener("click",sayHello);
+//				button1.addEventListener("click",sayGoodbye);
+//				button1.addEventListener("click",function(){
+//					button1.removeEventListener("click",sayHello);
+//					button1.removeEventListener("click",sayGoodbye);
+//				});
+//			}else{
+//				button1.attachEvent("onclick",sayHello);
+//				button1.attachEvent("onclick",sayGoodbye);
+//				button1.attachEvent("click",function(){
+//					button1.detachEvent("onclick",sayHello);
+//					button1.detachEvent("onclick",sayGoodbye);
+//				});
+//			}
+			
+			function sayHello(){
+				alert("hello");
+			}
+			function sayGoodbye(){
+				alert("江湖再见");
+			}
+		</script>
+	</body>
+</html>

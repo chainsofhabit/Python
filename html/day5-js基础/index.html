@@ -1,0 +1,50 @@
+<!--
+	1.什么是js
+	js是javascript的缩写，是一门专门用来控制网页内容的行为的脚本语言
+	js是web标准中的行为标准
+	
+	
+	在哪写js代码
+	a.写在标签内部（写在标签的行为相关的行为属性中，比如按钮的onclicked)
+	b.写在script标签中(script标签可以放在html中的任何位置，但是一般情况还是放在head或者body中)
+	c.写在外部的js文件中,然后通过script标签来导入，通过设置src属性为js文件的路径
+	
+	3.js能做些什么事情
+	a.可以在网页中插入html代码
+	b.可以修改标签里的内容
+	c.可以修改标签的样式
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<!--内部的js-->
+		<script type="text/javascript">
+			//在这也可以写js代码
+			window.alert('hello,script')
+		</script>
+		<!--外部的js-->
+		<script type="text/javascript" src="js/index.js">
+			
+		</script>
+	</head>
+	<body>
+		
+		<p id="p1">中秋快乐</p>
+		
+		
+		<!--内联的js-->
+		<button onclick="window.alert('猪吗')">点我点我</button>
+		<!--<input type="text" onfocus="window.alert" />-->
+		
+		<!--插入html代码-->
+		<script type="text/javascript">
+			document.write('<p>中秋节快乐！！！！</p>')
+		</script>
+	</body>
+</html>

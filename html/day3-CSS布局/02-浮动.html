@@ -1,0 +1,32 @@
+<!--
+	1.怎么浮动
+	通过float属性赋值为left或者right来让标签浮动，浮动后会让标签脱流
+	浮动的目的就是让竖着显示地可以横着来（针对块）
+	2.浮动的效果
+	a.所有的标签浮动后：一行可以显示多个；默认地宽高是内容的大小，可是设置宽度和高度
+	b.一行显示不了的时候才会自动换行
+	
+	3.注意事项：
+	a.如果同一级的标签，后面的需要浮动，前面的也要浮动，否则可能会出现显示问题
+	b.浮动地标签不占池底位置，只占水面地位置；不浮动的既占池底也占水面
+	
+	
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" style="background-color:salmon ;float: left;width: 100%;height: 150px;">
+			
+		</div>
+		<div style="background-color: red;float: left;width: 30%;height: 1000px;"></div>
+		<div style="background-color: brown;float: right;width: 30%;height: 1000px;"></div>
+		<div style="background-color: slateblue;float: left;width: 40%;height: 1000px;"></div>
+		
+	</body>
+</html>

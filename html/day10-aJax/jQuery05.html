@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<ul id="mm">
+			
+		</ul>
+		<button id="load">加载</button>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#load").on("click",function(evt){
+					var url = "http://api.tianapi.com/meinv/?key=84be659ca570db88f8b1119a60845cc8&num=10";
+					$.getJSON(url,function(jsonObj){
+						$("#mm").empty();
+						for(var i = 0;i<jsonObj.newslist.length;i+=1){
+							$("#mm").append(
+								$("<li>").append(
+									$("<a target = '_blank'>")
+										.text(jsonObj.newslist[i].title)
+										.attr("href",jsonObj.newslist[i].picUrl)
+								)
+							);
+						}
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

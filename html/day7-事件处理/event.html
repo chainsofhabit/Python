@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a id="about" href="http://www.baidu.com">关于</a>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			var a = document.getElementById("about");
+			bind(a,"click",function(evt){
+				evt = evt || window.event;
+				if (evt.preventDefault){
+					
+					evt.preventDefault();   //阻止事件的默认行为
+				}else{
+					evt.returnValue = false;
+				}
+				console.log("hello");
+			});
+		</script>
+	</body>
+</html>

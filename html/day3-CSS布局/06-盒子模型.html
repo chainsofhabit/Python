@@ -1,0 +1,58 @@
+<!--
+	html中所有可见标签都是一个盒子模型：包括长和宽决定的内容的大小、padding,border,margin四个部分组成
+	其中内容，padding，border是可见，margin不可见
+	
+	1.内容：设置eidth和height影响的就是内容部分的大小。添加子标签、添加内容都是放在内容部分的
+	2.padding:在内容的外围，可见部分，如果标签有背景颜色，那么这个部分的颜色和内容的一致
+	3.border:边框,border是在padding的外围，如果没有padding就在内容的外围可见部分，可以设置颜色和大小
+	4.
+	
+	
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				background-color: skyblue;
+				/*1.内容*/
+				width: 100px;
+				height: 60px;
+				
+				/*2.padding*/
+				/*padding-left: 20px;
+				padding-top: 20px;*/
+				/*同时设置上右下左的padding值*/
+				/*padding: 10px 20px 100px 50px;*/
+				/*同时设置上下和左右*/
+				/*padding: 20px 100px;*/
+				
+				/*同时设置所有方向的padding都是20px*/
+				padding: 20px;
+				/*3.border：宽度 样式 颜色*/
+				/*border-left: 2px solid red;*/
+				
+				/*同时设置四个边的边框*/
+				border:10px solid red;
+				
+				/*4.margin:宽度*/
+				margin-left: 80px;
+			}
+			
+			
+			input{
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<div id="">
+			asd
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div1{
+				width: 600px;
+				height: 400px;
+				margin: 10px;
+				border: 1px solid black;
+				position: absolute;     /*使用绝对定位*/
+				/*overflow: auto;*/
+			}
+			#div2{
+				width: 50px;
+				height: 50px;
+				background-color: blueviolet;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+		<script src="js/mylib1.js"></script>
+		<script type="text/javascript">
+			var move = $("div2");
+			var flag = 0
+			bind(move,"mousedown",function(evt){
+				flag = 1
+				move.style.backgroundColor = "red";
+				evt = evt || window.event;
+				this.kTop = evt.clientY - this.offsetTop;
+				this.kLeft = evt.clientX - this.offsetLeft;
+				var bigDiv = $("div1");
+				bind(bigDiv,"mousemove",function(evt){
+					if(flag == 1){
+						move.style.backgroundColor = "red";
+						evt = evt || window.event;
+						move.style.marginTop = evt.clientY - move.kTop + "px";
+						move.style.marginLeft = evt.clientX-move.kLeft + "px";
+					}
+					
+				});
+			});
+			
+			bind(window,"mouseup",function(){
+				flag = 0;
+				move.style.backgroundColor = "blueviolet";
+			});
+		</script>
+	</body>
+</html>

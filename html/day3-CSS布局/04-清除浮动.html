@@ -1,0 +1,53 @@
+<!--
+	1.
+	清除浮动：清除浮动不是将标签的浮动给去掉，而是清除因为浮动而产生的高度塌陷的问题
+	
+	高度塌陷：父标签不浮动，子标签浮动并且不设置父标签的高度就会产生高度塌陷的问题
+	2.
+	方案1：添加空盒子，在高度塌陷的标签（父标签）的最后添加一个空的div，并且设置样式clear的值为both
+	方案2：给父标签添加样式设置overflow的值为hidden
+	方案3：万能清除法
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*方案2*/
+			/*#father{
+				overflow: hidden;
+			}*/
+			#father:after{
+				display: block;
+				clear: both;
+				content: '';
+				visibility: hidden;
+				height: 0;
+				
+				
+			}
+			#father{
+				zoom: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="background-color: salmon;height: 120px;"></div>
+		<div style="background-color: firebrick;">
+			<div id="" style="background-color: seagreen;height: 800px;float:left,width:">
+				
+			</div>
+			<div id="" style="background-color: aqua;height: 300px;float: left;"></div>
+			
+			
+			<!--方案一：添加空盒子-->
+			<!--<div id="" style="clear: both;"></div>-->
+				
+			
+		</div>
+		<div style="background-color: sienna;width: 100%;height: 200px;"></div>
+	</body>
+</html>

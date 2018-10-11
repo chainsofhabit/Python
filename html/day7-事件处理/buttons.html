@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="buttons">
+			<button>Button1</button>
+			<button>Button2</button>
+			<button>Button3</button>
+			<button>Button4</button>
+			<button>Button5</button>
+		</div>	
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			var buttons = document.querySelectorAll("#buttons>button");
+			for(var i = 0;i < buttons.length;i += 1){
+				//如果希望在事件回调函数中获取事件源（引发事件的标签）
+				//应该通过事件对象的target属性去获取事件源
+				bind(buttons[i],"click",function(evt){
+					evt = evt || window.event;   // (||)短路运算符
+					evt.target.textContent = "欧耶";
+				});
+			}
+			
+		</script>
+	</body>
+</html>

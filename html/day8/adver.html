@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#adv{
+				width: 200px;
+				height: 150px;
+				background-color: blueviolet;
+				/*position: fixed;*/
+			}
+			#button1{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			卖耗子药咯~~
+			<button id="closeButton">关闭</button>
+		</div>
+		<script src="js/mylib1.js"></script>
+		<script type="text/javascript">
+			var closeButton = document.getElementById("closeButton");
+			bind(closeButton,"click",function(){
+				//元素访问子节点-children
+				//元素访问父节点-parentNode
+				//元素访问父节点-previousSibling/nextSibling
+//				evt = evt || window.event;
+//				evevt.target = evt.target||evt.srcElement;
+//				evt.target.parentNode.style.display = "none";
+
+
+//				closeButton.parentNode.style.display = "none";
+				
+//				closeButton.parentNode.style.visibility = "hidden";
+				//读取元素的样式
+				var advDiv = closeButton.parentNode;
+				var currentStyle = document.defaultView.getComputedStyle(advDiv);
+//				alert(currentStyle.width);
+//				alert(currentStyle.height);
+//				alert(currentStyle.backgroundColor);
+
+				var num1 = parseInt(currentStyle.width) + 50;
+				var num2 = parseInt(currentStyle.height) + 50;
+				advDiv.style.width = num1 + "px";
+				advDiv.style.height = num2 + "px";
+			});
+		</script>
+	</body>
+</html>

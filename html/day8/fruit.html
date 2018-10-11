@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				margin: 20px 50px;
+			}
+			#fruits li {
+				list-style: none;
+				width: 200px;
+				height: 50px;
+				font-size: 20px;
+				line-height: 50px;
+				background-color: cadetblue;
+				color: white;
+				text-align: center;
+				margin: 2px 0;
+			}
+			#fruits>li>a {
+				float: right;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				right: 5px;
+			}
+			#fruits~input {
+				border: none;
+				outline: none;
+				font-size: 18px;
+			}
+			#fruits~input[type=text] {
+				border-bottom: 1px solid darkgray;
+				width: 200px;
+				height: 50px;
+				text-align: center;
+			}
+			#fruits~input[type=button] {
+				width: 80px;
+				height: 30px;
+				background-color: coral;
+				color: white;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>苹果<a href="javascript:void(0);">×</a></li>
+				<li>香蕉<a href="javascript:void(0);">×</a></li>
+				<li>火龙果<a href="javascript:void(0);">×</a></li>
+				<li>西瓜<a href="javascript:void(0);">×</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script src="js/mylib1.js"></script>
+		<script type="text/javascript">
+			function deleteItem(evt){
+				evt = evt || window.event;
+				evt.target = evt.target || evt.srcElement;
+				var li = evt.target.parentNode;
+				li.parentNode.removeChild(li);     //由父节点来删除
+			}
+			
+			var delAnchors = document.querySelectorAll("#fruits a");
+			for(var i = 0;i<delAnchors.length;i+=1){
+				bind(delAnchors[i],"click",deleteItem);
+			}
+			
+			var okBtn = document.getElementById("ok");
+			var fruitInput = document.querySelector("#container>input[type=text]");
+			var fruitsUl = document.getElementById("fruits");
+			bind(okBtn,"click",function(){
+				var fruitName = fruitInput.value.trim();
+				if(fruitName.length >0){
+					var li = document.createElement("li");  //创建新的标签
+					var a = document.createElement("a"); 
+					li.innerHTML = fruitName;
+					a.innerHTML = "×";
+					a.href = "javascript:viod(0);";
+					bind(a,"click",deleteItem);
+//					fruitsUl.appendChild(li);
+					li.appendChild(a);
+					fruitsUl.insertBefore(li,fruitsUl.firstChild);
+				}
+				
+			});
+		</script>
+	</body>
+</html>

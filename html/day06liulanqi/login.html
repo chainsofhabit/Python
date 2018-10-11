@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#login{
+				width: 300px;
+				height: 200px;
+				margin: 10px auto;
+			}
+			#login label{
+				text-align: right;
+				display: inline-block;
+				width: 80px;
+				margin: 5px 5px;
+			}
+			#login input[type]{
+				border: none;
+				outline: none;
+				border-bottom: 1px dotted darkgray;
+			}
+			#login input[type=submit]{
+				border: none;
+				display: inline-block;
+				width: 60px;
+				height: 20px;
+				background-color: red;
+				color: white;
+				margin-top: 10px;
+				position: relative;
+				left: 200px;
+			}
+			#login fieldset{
+				padding: 10px 5px;
+				border-radius: 5px 5px 5px 5px;
+				
+			}
+			#login legend{
+				background-color: lightgoldenrodyellow;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="h1" class="foo">用户登录</h1>
+		<div id="login">
+			<form action="" method="post">
+				<fieldset>
+					<legend>用户登录</legend>
+					<p>
+						<label for="username">用户名：</label>
+						<input type="text" name="username" id="username">
+					</p>
+					<p>
+						<label for="password">密码：</label>
+						<input type="password" name="passeord" id="passeord">
+						
+						
+					</p>
+					<p>
+						<label for="email">电子邮箱：</label>
+						<input type="email" name="email" id="email">
+					</p>
+					<p>
+						<input type="submit" value="登录">
+					</p>
+				</fieldset>
+				
+			</form>
+			
+		</div>
+		<button onclick="showMessage">确定</button>
+		<button onclick="showTable">查看乘法表</button>
+		<script>
+			function showTable(){
+				document.write("<table style='border-collapse: collapse;'>");
+				for(var i=1;1<=9;i+=1){
+					document.write("<tr>");
+					for(var j=1;j<=9;j+=1){
+						document.write("<td style='border:1px solid black'>");
+						document.write(i + "*" + j + "=" + i*j);
+						
+						document.write("</td>");
+					}
+					document.write("</tr>");
+				}
+				document.write("</table>");
+				
+			}
+		</script>
+	</body>
+</html>

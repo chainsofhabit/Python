@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Student(name,age){
+				this.name = name;
+				this.age = age;
+			}
+			//对象方法绑定在对象上
+			Student.prototype.study = function(courseName){
+				alert(this.name + "正在学习" + courseName);
+			};
+			Student.sayHello = function(){
+				alert("大家好！")
+			};
+			var obj = new Student("江在秀",21);
+			obj.study("Linux操作系统");
+			Student.sayHello();
+			
+			
+			//创建对象
+			//JSON-JavaScript Object Notation
+			//JSON是JavaScript中创建对象的字面量语法
+			//JSON被广泛的运用于存储和交换数据
+			/*var obj = {
+				"name" = "江在秀";
+				"age" = 21;
+				"study":function(courseName){
+					alert(this.name + "正在学习" + courseName);
+				},
+				"watchAv":function(){
+					if(this.age<18){
+					alert(this.name + "建议你观看《熊出没》！！");
+					}else{
+						alert(this.name + "正在学习姿势" );
+					}
+				}
+			};
+			obj.study("HTML");*/
+			
+			
+			
+			/*
+			var obj = new Object();
+			obj.name = "江在秀";
+			obj.age = 21;
+			obj.study = function(courseName){
+				alert(this.name + "正在学习" + courseName);
+			};
+			obj.watchAv = function(){
+				if(this.age<18){
+					alert(this.name + "建议你观看《熊出没》！！");
+					
+				}else{
+						alert(this.name + "正在学习姿势" )
+					}
+			};
+			obj.study("Python");*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!--
+	CSS是web标准中的表现标准，用来规定网页上内容地布局和样式（CSS又叫样式表）
+	
+	目前广泛使用的是CSS3
+	
+	1.怎么来写样式表（CSS），写在哪？
+	a.内联样式表
+	将样式写在标签的style属性中（每个可见标签都有style属性）
+	
+	b.内部样式表
+	将样式表写在head标签中的style标签里
+	c.外部样式表
+	将样式表写在CSS文件中，然后再head标签中通过link标签来导入
+	
+	注意：不管在什么情况下，内联样式表的优先级最高,内部和外部的优先级看谁后写，谁地优先级高
+	
+	2.固定语法
+	选择器{属性1：属性值1；属性2：属性值2....}
+	a.选择器的作用是用来确定后面地样式到底是给哪个/哪几个标签写的
+	b.属性：属性是CSS中本来就支持和拥有的属性，属性地顺序可以随意写
+		属性和属性值之间使用冒号连接
+		属性后面必须写分号
+	c.属性值：
+	（1）数值：如果数值是用来表示大小，后面必须跟单位px或者%
+			px--像素    %--百分比（前提是父标签对应的宽度或者高度确定的）
+	（2）颜色：颜色对应的英语单词，
+	#加RGB对应的16进制值（一个颜色值对应2位16进制），
+	直接使用RGB值:rgb(R,G,B),rgba(R,G,B,A)Alpha透明度 R,G,B值0-255，Alpha值0-1
+	
+	3.常见的属性
+	color：设置字体的颜色
+	background—color：背景颜色
+	width：宽度
+	height：高度
+	font-size：字体大小
+	-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--外部样式-->
+		<link rel="stylesheet" type="text/css" href="css/04CSS基础.css"/>
+		<!--内部样式表-->
+		<style type="text/css">
+			h1{
+				background-color: rgb(0,255,255);
+				color: brown;
+			}
+			a{
+				font-size: 20px;
+			}
+			img{
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+	<p style="background-color: cornflowerblue;color: yellow;">样式表的内容</p>
+	<p style="font-size: 20px;">样式表地语法</p>
+	
+	<h1>我是标题1</h1>
+	<h1>我是标题2</h1>
+	
+	<a href="">百度一下</a>
+	
+	<img src="img/load.png" />
+	</body>
+</html>

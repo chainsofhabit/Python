@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#button1{
+				width: 50px;
+				height: 30px;
+				background-color: red;
+				color: white;
+				border: none;
+			}
+			/*#div2{
+				width: 90px;
+				height: 30px;
+				background-color: skyblue;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<input type="text" name="" id="number2" value="" />
+			<button id="button1">确定</button>
+		</div>
+		<p id="result"></p>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			var number1 = parseInt(Math.random()*100 + 1);
+			function guessNumber(){
+				var num = document.getElementById("number2").value;
+				var str = document.getElementById("result");
+				var thyAnswer = parseInt(num);
+				if (num == thyAnswer){
+					str.textContent = "你猜的是" + num +" ";
+					if (num == number1){
+					
+					str.textContent += "恭喜你猜对了";
+					button1.disabled = true;
+					num.disabled = true;
+					}else if(num < number1){
+						str.textContent += "猜小了";
+					}else{
+						str.textContent += "猜大了";
+					}
+				}else{
+					alert("你是不是傻，让你输数字！！！");
+				}
+				
+				num.value = "";
+				num.focus();
+			}
+			bind(button1,"click",guessNumber);
+			bind(num,"click",function(evt){
+				evt = evt || window.event;
+				console.log(evt.keyCode);
+				console.log(evt.which);
+				if(evt.keyCode == 13 || evt.which == 13){
+					guessNumber();
+				}
+			});
+//			guessNumber(num);
+		</script>
+	</body>
+</html>

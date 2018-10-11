@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				position: relative;
+			}
+			#img{
+				height: 150px;
+				
+			}
+			#bimg{
+				position: absolute;
+				height: 400px;
+				width: 600px;
+				left: 300px;
+			}
+			#div1{
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="img">
+			<img id="bimg"></img>
+		</div>
+		<div id="div1">
+			<img id="img1" src="img/thumb-1.jpg"/>
+			<img id="img2" src="img/thumb-2.jpg"/>
+			<img id="img3" src="img/thumb-3.jpg"/>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			var imeges = document.getElementById("bimg");
+			imeges.src = "img/hello.jpg";
+			var p1 = document.getElementById("img1");
+			bind(p1,"click",function(){
+				imeges.src = "img/hello.jpg";
+			});
+			var p2 = document.getElementById("img2");
+			bind(p2,"click",function(){
+				imeges.src = "img/goodbye.jpg";
+			});
+			var p3 = document.getElementById("img3");
+			bind(p3,"click",function(){
+				imeges.src = "img/oneshit.jpg";
+			});
+		</script>
+	</body>
+</html>

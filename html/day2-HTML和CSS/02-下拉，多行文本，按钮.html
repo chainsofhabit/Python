@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--下拉和多行文本域可以放在form标签中用于收集信息
+			1.下拉菜单:select标签
+			一个select标签对应一个下拉菜单，菜单中的选项要通过option来列举
+			a.selecvted属性：设置默认被选中的选项
+		-->
+		<select name="city">
+			
+			<option value="成都">成都</option>
+			<option value="重庆">重庆</option>
+			<option value="云南">云南</option>
+			
+		</select>
+		<!--2.对下拉菜单进行分组
+			可以通过optgroupb标签对下拉菜单进行分组，通过lable属性对分组进行命名
+		-->
+		<select name="city">
+			<optgroup label="四川省">
+				<option value="成都">成都</option>
+				<option value="绵阳">绵阳</option>
+				<option value="内江">内江</option>
+				<option value="达州">达州</option>
+				
+			<optgroup label="浙江省">
+				<option value="金华">金华</option>
+				<option value="义乌">义乌</option>
+				<option value="台州">台州</option>
+				<option value="西湖">西湖</option>
+				
+				
+			</optgroup>
+			<optgroup label="">
+				<option value=""></option>
+			</optgroup>
+				
+		</select>
+		<!--2.多行文本域：textarea标签
+			name：提交的数据对应的名字
+			rows:默认一屏的行数
+			cols:默认的列数
+			placeholder：设置占位符
+			disabled:禁用
+			maxlength:约束能输入的最大的字符个数
+		-->
+		<textarea maxlength="200" name="message" rows="20" cols=""placeholder="消息" disabled="disabled"></textarea>
+		
+		<!--3.按钮：button-->
+		<button>注册</button>
+		<button><img src="img/load.png" alt=""/></button>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!--
+	1.标准流：浏览器对标签默认的布局方式就是标准流
+	2.标准流布局原则：
+	块级：a.块级标签一个占一行（不管标签的宽度是否是浏览器宽度）
+		b.默认宽度是浏览器地宽度，默认高度是内容的高度
+		c.直接设置宽和高有效
+	行内块标签：(img)
+		a.多个行内块可以在一行显示
+		b.默认的宽高都是内容的宽高
+		c.直接设置宽高有效
+		
+		
+	行内标签：（a,span）
+		a.多个行内可以在一行显示
+		b.默认的宽高都是内容的宽高
+		c.直接设置宽高无效
+		
+	a,img,input,span
+	3.display属性：转换标签地性质
+	block:块级
+	inline；行内
+	inline-block:行内块
+	注意：行内块标签和其他标签之间默认有间隙，而且这个间隙无法消除
+		
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*1.display属性*/
+			#div1{
+				background-color: yellowgreen;
+				width: 120px;
+				height: 120px;
+				display: block;
+			}
+			#div2{
+				background-color: tomato;
+				width: 120px;
+				height: 120px;
+				display: block;
+			}
+			div{
+				display: inline-block;
+			}
+			img{
+				width: 200px;
+				height: 200px;
+				/*display: block;*/
+			}
+			a{
+				display: block;
+				width: 120px;
+			}
+			/*#div1{
+				background-color: skyblue;
+				font-size: 30px;
+				width: 100px;
+				height: 200px;
+			}
+			#div2{
+				background-color: salmon;
+				width: 120px;
+				height: 120px;
+			}
+			p{
+				background-color: darkgrey;
+			}
+			a{
+				background-color: brown;
+				width: 200px;
+				height: 100px;
+			}
+			img{
+				width: 100px;
+				height: 100px;
+			}*/
+			/*span{
+				
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			aAsda
+			
+			
+		</div>
+		<div id="div2">
+			qwer
+		</div>
+		<!--默认是行内-->
+		<a href="">百度一下</a>
+		<a href="">知乎</a>
+		<!--默认是行内块-->
+		<img src="img/load.png"/>
+		<img src="img/load.png"/>
+		<!--<img src="img/load.png"/>
+		<img src="img/background.png"/>
+		<a href="">百度一下</a>
+		<p>HTML</p>
+		<div id="div1">
+			acs
+			<p>蓝色的</p>
+		</div>
+		<div id="div2">
+			dfewsc
+		</div>-->
+	</body>
+</html>

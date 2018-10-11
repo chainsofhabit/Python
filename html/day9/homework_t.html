@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#one{
+				position: fixed;
+				width: 200px;
+				height: 200px;
+				left: 50px;
+				top: 50px;
+				background-color: lightsalmon;
+			}
+			#two{
+				position: fixed;
+				width: 100px;
+				height: 100px;
+				right: 50px;
+				bottom: 50px;
+				background-color: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one"></div>
+		<div id="two"></div>
+		<script src="js/mylib1.js"></script>
+		<script type="text/javascript">
+			var darggables = [];
+			function makeDraggable(div){
+				darggables.push(div);
+				div.isMouseDown = false;
+				div.originX = 0;
+				div.orderY = 0;
+				div.oidX = 0;
+				div.oldY = 0;
+				bind($("one"),"mousedown",function(evt){
+					for()
+					var target = evt.target;
+					
+					target.isMouseDown = true;
+					var currentStyle = document.defaultView.getComputedStyle(target);    //读取样式表
+					target.originX = parseInt(currentStyle.left);
+					target.originY = parseInt(currentStyle.top);
+					target.oldX = evt.clientX;
+					target.oldY = evt.clientY;
+					
+				});
+				bind($("one"),"mousemove",function(evt){
+					if(isMouseDown){
+						
+						var dx = evt.clientX - oldX;
+						var dy = evt.clientY - oldY;
+						oneDiv.style.left = originX + dx +"px";
+						oneDiv.style.top = originY + dy + "px";
+					}
+				});
+			};
+			//函数可以
+			var oneDiv = $("one");
+			var isMouseDown = false;
+			var originX = 0;var originY = 0;
+			var oldX = 0;var oldY = 0;
+			
+			
+			
+			bind($("one"),"mouseup",function(){
+				isMouseDown = false;
+			});
+			bind($("one"),"mouseout",function(){
+				isMouseDown = false;
+			});
+		</script>
+	</body>
+</html>

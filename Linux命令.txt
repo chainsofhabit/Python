@@ -15,16 +15,135 @@ wget -下载页面
 cat index.html-打开网页
 cat -n index.html -加行编号
 history-列出历史命令
+ps-查看自己使用的shell
+whatis-查看命令的说明
+which/whereis查看命令的位置
+man/info/apropos-查看帮助文档
+sudo-以管理员身份执行命令
 ！+历史命令编号-重新执行该命令
 history -c  --清除历史命令
 mkdir-make directories 创建文件夹
 redir-remove directories 删除空文件夹
 cp-拷贝文件
-rm-删除文件
+rm/touch-删除文件
 cp -r +文件夹-拷贝文件夹
+unname/hostname-查看系统和主机名
 mv -move 剪切文件
 echo -回声
 date- 查看系统事件日期
 cal- calender 查看日历
 head/tail-查看文件的前面/后面部分
 less/more-分屏查看文件
+cd/pwd切换和查看当前工作目录
+ls-查看目录内容
+  -l 以长格式查看文件和目录
+  -a显示以点开头的文件和目录（隐藏文件）
+  -R 遇到目录要进行递归展开（继续列出目录下面的文件和目录）
+  -d 值列出目录 不列出其他内容
+find/grep-查找文件和查找内容
+script-录制操作脚本
+mesg/write/wall/mail-给用户发消息
+目录结构
+/bin-基本命令的二进制文件
+/boot-引导加载程序的静态文件
+/dev-设备文件
+/etc-配置文件
+/home-普通用户主目录的父目录
+/lib-共享库文件
+/lib64-共享64位库文件
+/lost+found-存放未链接文件
+/media-自动识别设备的挂载目录
+/mnt-临时挂载文件系统的挂载点
+/opt-可选插件软件包安装位置
+/proc-内核和进程信息
+/root-超级管理员用户主目录
+/run-存放系统运行时需要的东西
+/sbin-超级用户的二进制文件
+/sys-设备的伪文件系统
+/tmp-临时文件夹
+/usr-用户应用目录
+/var-变量数据目录
+
+>输出重定向
+>>追加输出重定向
+2>错误输出重定向
+
+<输入重定向
+
+|管道（进程间通信）-把前一个进程的输出当做是后一个进程的输入
+
+wc-word count-统计行，单词，字节数量
+uniq-unique去重
+sort-排序
+diff-比较两个文件之间的差别
+
+Linux系统安装工具
+-使用包管理工具进行安装yum/rpm
+  -yum search <name> 搜索
+  -yum -y install <name1> ...  安装
+  -yum list installed 列出已经安装的软件列表
+  -yum update <name> 更新
+源代码构建安装
+  -wget
+  -gunzip/xz -d
+  -tar -xvf
+  -make && make install
+  -export PATH...(.bash-profile)
+压缩文件
+-gz--gzip/gunzip
+-xz---xz-z/xz-d
+
+WinRAR-归档和解归档
+tar-归档文件
+归档-把多个文件合成一个文件
+解归档-把一个文件拆成多个文件
+
+CentOS安装Python3.7
+1.下载Python源代码-wget 
+2.解压缩 gunzip+文件名.tgz
+3.解归档 tar-xvf +文件名.tar
+4.安装底层依赖库
+5.安装前的配置
+cd Python-3.7.0
+ ./configure --prefix=/usr/local/python37 --enable-optimizations
+6.构建安装
+make && make install
+7.配置PATH环境变量
+export PATH = $PATH:/usr/local/python37/bin
+8.注册软链接（符号链接）
+
+硬链接-文件的引用 只要引用数不为零 文件就一直存在
+软链接-相当于是文件的快捷方式，如果文件被删除，软链接失效
+ln -s 带完整路径的文件名，链接文件名
+
+IP地址可以确定网络上的一台主机，端口号可以用来区分不同的服务
+
+vim-文本编辑神器
+命令模式---> 编辑模式
+编辑模式--->命令模式
+命令模式--->末行模式
+
+hjkl/HML/0$/w/gg/G-移动光标
+ctrl+e/ctrl+y/ctrl+f/ctrl+b 翻页
+yy/p/dd/u/ctrl+r-复制粘贴删除
+
+ctrl+x ctrl+o 代码提示
+:w
+:q
+:set nu
+:set ts=4
+:set autoindent
+:1,$s/被替换的内容/替换后的内容/gice
+  -g:全局模式
+  -i:忽略大小写
+  -c:确认模式
+  -e:忽略错误
+
+对两个文件进行版本比较 vim -d
+如果vim打开了多个文件可以在末行模式中通过:b <编号>切换到其他文件
+:ls-查看打开的文件
+拆分窗口
+:vs
+:sp
+ctrl+w ctrl+w -在窗口间切换光标
+/正则表达式-正向搜索

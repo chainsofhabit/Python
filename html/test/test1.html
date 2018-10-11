@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			document.write(location.href);          属性返回当前页面的URL
+//			document.write(location.pathname);       属性返回URL的路径名
+			function newDoc(){
+				window.location.assign("http://www.baidu.com");
+			}
+			function goBack(){
+				window.history.back()
+			}
+			function goForward(){
+				window.history.forward()
+			}
+		</script>
+		<input type="button" value="Load new document" onclick="newDoc()" >
+		<input type="button" value="Back" onclick="goBack()">
+		<input type="button" name="" id="" value="forward" onclick="goForward()" >
+	</body>
+</html>

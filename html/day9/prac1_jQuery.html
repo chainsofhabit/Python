@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#container{
+				width: 800px;
+				height: 400px;
+				margin: 10px auto;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+			#buttons{
+				width: 800px;
+				margin: 10px auto;
+				text-align: center;
+			}
+			#add,#fla{
+				border: none;
+				outline: none;
+				width: 80px;
+				height: 40px;
+				background-color: red;
+				color: white;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			.small{
+				width: 80px;
+				height: 80px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			
+		</div>
+		<div id="buttons">
+			<button id="add">添加</button>
+			<button id="fla">闪烁</button>
+		</div>
+		<script src="js/mylib1.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#add").on("click",function(){
+					$("#container").append(
+						$("<div>").attr("class","small")
+							.css("background-color",randomColor()));
+				});
+			
+				$("#fla").on("click",function(){
+					var isFlashing = false;
+					setInterval(function(){
+						$("#container>div").each(function(){
+							$(this).css("background-color",randomColor());
+						});
+					},200);
+					
+				});
+			});
+		</script>
+	</body>
+</html>

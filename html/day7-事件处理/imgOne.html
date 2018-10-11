@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				position: relative;
+				width: 940px;
+				height: 430px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/slide-1.jpg"/>
+			<img src="img/slide-2.jpg"/>
+			<img src="img/slide-3.jpg"/>
+			<img src="img/slide-4.jpg"/>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+//			var images = ["img/slide-1.jpg","img/slide-2.jpg","img/slide-3.jpg","img/slide-4.jpg"];
+			var images = document.getElementsByTagName("img");
+			var index = 0;
+			var len = images.length;
+			var timer = setInterval(autoPlay,3000);
+			function autoPlay(){
+				images[index].style.display = "none";
+				index = ++index == len?0:index;
+				images[index].style.display = "inline";
+			}
+			bind(box,"mouseover",function(){
+				clearInterval(timer);
+			});
+			bind(box,"mouseout",function(){
+				timer = setInterval(autoPlay,3000);
+			});
+			
+		</script>
+	</body>
+</html>

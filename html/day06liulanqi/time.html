@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#time{
+				float: right;
+				background-color: burlywood;
+				color: black;
+				width: 260px;
+				height: 20px;
+				text-align: center;
+				font: "微软雅黑";
+			}
+		</style>
+	</head>
+	<body>
+		<!--<h1>H<sub>2</sub>O</h1>-->
+		<div id="time"></div>
+		<script type="text/javascript">
+			var days = ["日","一","二","三","四","五","六"];
+			function showTime(){
+				var now = new Date();
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var date = now.getDate();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+				var day = now.getDay();
+				var div = document.getElementById("time");
+				div.innerHTML = year + "年" 
+					+(month < 10? "0":"") + month + "月" 
+					+(date < 10? "0":"")+ date + "日&nbsp;&nbsp;"
+					+(hour < 10? "0":"") + hour + ":"
+					+(minute < 10? "0":"") + minute + ":"
+					+(second < 10? "0":"") + second 
+					+ "&nbsp;&nbsp;星期" + days[day];
+			}
+			showTime();
+			window.setInterval(showTime,1000)  //设置时间间隔，以毫秒为单位
+			
+		</script>	
+		
+	</body>
+</html>

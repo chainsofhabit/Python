@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2><span id="counter">5</span>秒以后自动跳转到简书...</h2>
+		<script type="text/javascript">
+			var countdown = 5;
+			var span = document.getElementById("counter");
+			function delaygo(){
+				countdown -= 1;
+				if (countdown == 0){
+					//window.location-浏览器对象
+					//window.document-文档对象
+					//window.history-浏览的历史记录
+					//window.navigator-浏览器
+					//window.screen-屏幕
+					
+					
+					window.location.href = "http://www.jianshu.com"
+				}else{
+					span.textContent = countdown;
+					setTimeout(delaygo,1000)
+				}
+			}
+			
+			setTimeout(delaygo,1000);
+			
+		</script>
+	</body>
+</html>

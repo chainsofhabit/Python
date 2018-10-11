@@ -1,0 +1,110 @@
+<!--常用的选择器
+	一.选择器
+	1.标签（元素）选择器：直接将标签名作为选择器，同时选中网页中所有同类型地标签
+	a{}--选中所有的a标签
+	
+	2.id选择器：通过在id属性值前加#，就构成了id选择器，选中id等于对应的值的标签
+	id属性：所有地标签都有id属性，（并且设置地值必须唯一？？？）
+	#p1{}--选中id值是p1的标签
+	
+	3.class选择器：通过在class属性值前加.(点)，就构成了类选择器，选中class等于对应的值的标签
+	.c1{}--选中所有class值是c1的标签
+	
+	4.群组选择器：多个选择器中间使用逗号隔开。选中所有的单独的选择器
+	a,p,#p1,.c1{}--选中所有的a标签，p标签和所有id值是p1以及所有class值是c1的标签
+	
+	5.包含选择器：多个选择器之间使用空格隔开。从前往后，找到最后一个选择器
+	div .c1 p{}---选中div中class是c1的标签中的p标签
+	
+	6.通配符*:直接将*作为选择器，选中当前页面中所有的标签
+	
+	二.选择器的优先级
+	通过不同的选择器选中了同一个标签，并且设置了同一个属性，谁的优先级高就谁有效。
+	看谁地优先级高，就看谁地权重值大
+	权重值是一样地情况下，谁后写，谁的优先级高
+	伪类选择器：0001
+	元素选择器：0001
+	class选择器：0010
+	id选择器：0100
+	群组选择器：直接看单独每一个地权重
+	包含选择器：多个选择器的权重和
+	通配符：0001
+	
+	注意：不管选择器地权重有多高，内联样式的优先级都是最高的
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*注意：在这个标签中写的代码是CSS代码*/
+			/*1.元素选择器*/
+		
+			a{
+				color: salmon;
+			}
+			/*id选择器*/
+			#a1{
+				background-color: skyblue;
+			}
+			/*class选择器*/
+			.c1{
+				color: cornflowerblue;
+			}
+			
+			/*群组选择器*/
+			a,p{
+				font-size: 20px;
+			}
+			
+			div .c1 p{
+				background-color: pink;
+			}
+			
+			/**{
+				background-color: sandybrown;
+			}
+			
+			#p{
+				color: red;
+			}*/
+			.p1{
+				color: blue;
+			}
+			
+			.p1,a{
+				color: yellow;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<p style="color: sienna;"></p>
+		
+		<a class="c1">超链接1</a>
+		<div id="">
+			<a href="">超链接2</a>
+		</div>
+		<div id="">
+			<div id="">
+				<a id="a1" href="">超链接3</a>
+				
+			</div>
+		
+		</div>
+		<p id="a1">我是段落1</p>
+		<h1 class="c1">我是标题1</h1>
+		
+		<div id="">
+		<p>我是p0</p>
+			<div class="c1">
+			<a href="">我是a3</a>
+			<p>p1</p>
+			<p>--p3</p>
+			</div>
+		</div>
+	
+	</body>
+</html>

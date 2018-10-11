@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#adv{
+				width: 940px;
+				margin: 0 auto;
+			}
+			#adv ul{
+				width: 120px;
+				height: 30px;
+				margin: 0 auto;
+				position: relative;
+				top: -40px;
+				
+			}
+			#adv li{
+				width: 30px;
+				height: 30px;
+				list-style: none;
+				float: left;
+				color: #ccc;
+				cursor: pointer;
+			}
+			#adv li:first-child{
+				color: lightcoral;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="adv">
+			<img src="img/slide-1.jpg" alt=""/>
+			<ul>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+			</ul>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			
+			function autoPlay(){
+				index += 1;
+				index %= 4;
+				var counter = 20;
+				var opacity = 1.0;
+				setTimeout(function(){
+					if(counter > 0){
+						counter -= 1;
+						opacity -= 0.05;
+						//通过image标签的style属性修改opacity样式调整透明度
+						img.style.opacity = opacity;
+						setTimeout(arguments.callee,40);
+					}else{
+						img.src = "img/slide-" + (index+1) +".jpg";
+						img.style.opacity = 1.0;
+						resetDotColor();
+						dotItems[index].style.color = "lightcoral";
+					}
+				},40);
+			}
+			function resetDotColor(){
+				for(var i=0;i<dotItems.length;i+=1){
+					dotItems[i].style.color = "white";
+				}
+			}
+			var index = 0;
+			var advDiv = document.getElementById("adv");
+			var img = document.querySelector("#adv>img");
+			var dotItems = document.querySelectorAll("#adv li");
+			for (var i = 0;i<dotItems.length;i+=1){
+				dotItems[i].index = i;
+				bind(dotItems[i],"colock",function(evt){
+					evt = evt || window.event;
+					evt.target = evt.targe  || event.srcElement;
+					index = evt.target.index;
+					img.src = "img/slide-" + (index+1) +".jpg";
+					resetDotColor();
+					evt.target.style.color = "lightcoral"	
+				});	
+			}
+			var timer = setInterval(autoPlay,3000);
+			
+			bind(advDiv,"mouseover",function(){
+				clearInterval(timer);
+			});
+			bind(advDiv,"mouseout",function(){
+				timer = setInterval(autoPlay,3000);
+			});
+		</script>
+	</body>
+</html>

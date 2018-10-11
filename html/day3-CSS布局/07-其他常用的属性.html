@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*1.字体相关的属性
+			  字体颜色:color
+			 字体大小:font-size
+			 字体加粗：font-weight(bolder(更粗的)/bold(加粗)/normal(常规)/100-900)
+			字体倾斜：font-style
+			 */
+			p{
+				font-family: "微软雅黑";
+				
+				font-weight: 900;
+				font-style: oblique;
+			}
+			/*2.对齐方式:text-align
+			 center:居中
+			 */
+			P{
+				text-align: center;
+			}
+			/*3.行高：line-height
+			 设置一行的高度
+			 * */
+			p{
+				/*一行内容在锤子方向上居中，可以通过将line-height的值设置为和高度height的值一样*/
+				line-height: 50px;
+			}
+			/*4.文本修饰text-decoration
+			 none:取消修饰
+			 underline:添加下划线
+			 overlin:上划线
+			 line-through:删除线
+			 */
+			a{
+				text-decoration:none;
+			}
+			a:hover{
+				text-decoration: underline;
+				color: red;
+			}
+			/*5.首行缩进
+			 注意单位是：em(表示空格)
+			
+			 */
+			p{
+				text-indent: 2em;
+			}
+			
+			/*6.字间距：letter-spacing
+			 单位可以是：px em*/
+			p{
+				letter-spacing: 2em;
+			}
+			ul{
+				list-style-type: square;
+			}
+			/*8.背景图片
+			 background:图片地址 是否平铺  x方向的坐标  y方向的坐标  背景色*/
+			#div{
+				width: 300px;
+				height: 200px;
+				/*background-image: url(img/load.png);*/
+				background:url(img/jingdonglogin.png) no-repeat 100px 30px red;
+			}
+			/*9.设置圆角*/
+			#div{
+				border-radius:30px ;
+				border: 3px solid yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="">百度一下</a>
+		<p style="background-color: skyblue;height: 100px;">夏天的夜晚总是来的很慢，七点半的小城还在余晖的笼罩下，没有夜幕将近，只是有些沉闷。</p>
+		
+		<ul>
+			<li>数学</li>
+			<li>语文</li>
+		</ul>
+		<div id="div">
+			<!--<div id=""style="background-color: skyblue;width: 60px;height: 80px;float: right;">
+				
+			</div>-->
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="continer">
+			<input type="text" name="" id="" value="" />
+			<button id="dream">解梦</button>
+			
+		</div>
+		<p id="result"></p>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#dream").on("click",function(){
+					var dreamName = $("#continer input[type=text]").val().trim();
+//					var dreamCode = encodeURIComponent(dreamName,"utf-8");
+					var url = "http://api.tianapi.com/txapi/dream/?key=84be659ca570db88f8b1119a60845cc8&word="+encodeURIComponent(dreamName);
+					$.getJSON(url,function(jsonObj){
+						if(dreamName.length>0){
+							$("#continer").append(
+								$("#result").text(jsonObj.newslist[0].result)
+							);
+						}
+					});
+					
+				});
+			});
+		</script>
+	</body>
+</html>
