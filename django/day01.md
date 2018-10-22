@@ -36,22 +36,63 @@ virtualenv --no-site-packages djenv6
 
 -p 如果安装了不止一个python版本加 -p 命令 并指定路径
 ### 虚拟环境里常用的命令
-1.pip list 查看虚拟环境下安装的所有的包
+1.查看虚拟环境下安装的所有的包
 
-2.pip freeze 列出虚拟环境中通过pip安装的包
+    pip list 
 
-3.activate 启动虚拟环境
+2.列出虚拟环境中通过pip安装的包
 
-4.deactive 退出虚拟环境
+    pip freeze 
 
-5.pip install django==1.11 进入虚拟环境后安装django
+3.启动虚拟环境
 
-6.python manage.py - 查看所有命令
+    activate 
 
-7.python manage.py runserver - 运行Django服务
+4.退出虚拟环境
 
-8.python manage.py runserver 8080 - 将端口修改为8080（默认是8000）
+    deactive 
 
-9.python manage.py runserver 0.0.0.0:8080 - 将自己的django项目设置为别人也能访问
+5.进入虚拟环境后安装django
 
-10.python manage.py createsuperuser - 创建超级用户
+    pip install django==1.11
+
+6.查看所有命令
+
+    python manage.py
+
+7.将端口修改为8080（默认是8000）
+
+    python manage.py runserver 8080 -
+
+8.创建项目
+
+django-admin startproject 项目名称day01
+
+    day01工程目录文件夹,__init__.py,setting.py,urls.py,wsgi.py
+    manage.py 工程集管理入口
+
+9.访问后台管理
+
+    http://127.0.0.1:8080/admin
+    
+10.修改数据库配置setting.py
+
+    ENGINE,USER,PASSWORD,HOST,PORT,NAME
+
+11.映射模型到数据库中
+
+    python manage.py migrate
+
+12.安装数据库驱动
+
+    pip install pymysql
+
+13.初始化数据库的驱动__init__.py
+
+    import pymysql
+    pymysql.install_as_mysqldb()
+    
+14.创建超级管理员
+
+    python manage.py createsuperuser
+
