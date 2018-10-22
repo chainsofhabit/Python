@@ -11,3 +11,6 @@ Redis的set是string类型的无序集合，集合是通过哈希实现的，添
 #### zset(sorted set:有序集合)
 Redis zset和set一样也是string类型元素的集合，且不允许重复的成员，不同的是每个元素都会关联一个double类型的分数，Redis正是通过分数来为集合中的成员进行从小到大的排序，zset成员是唯一的，但分数却可以重复
 zadd命令:添加元素到集合，元素在集合中存在则更新对应score
+
+
+asdsadsa
