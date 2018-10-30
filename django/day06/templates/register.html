@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    注册
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+
+
+        <p>姓名:<input type="text" name="username"></p>
+        <p>密码:<input type="password" name="password"></p>
+        <p>确认密码:<input type="password" name="password2"></p>
+        <input type="submit" value="提交">
+
+    </form>
+    {% if errors.username %}
+        姓名错误信息:{{ errors.name }}
+    {% endif %}
+
+    {% if errors.password %}
+        密码错误信息:{{ errors.password }}
+    {% endif %}
+
+    {% if errors.passeord2 %}
+        确认密码错误信息:{{ errors.password2 }}
+    {% endif %}
+{% endblock %}
