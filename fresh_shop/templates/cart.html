@@ -29,19 +29,20 @@
 				<li class="col05">{{ goods.0.shop_price }}元</li>
 				<li class="col06">
 					<div class="num_add">
-						<a href="javascript:;" onclick="add_cart_num({{ goods.0.id }});" class="add fl">+</a>
-						<input type="text" class="num_show fl" value="{{ goods.1 }}" id="goods_num_{{ goods.0.id }}">
-						<a href="javascript:;" onclick="sub_cart_num({{ goods.0.id }});" class="minus fl">-</a>
-					</div>
+                        <a href="javascript:;" class="add fl" onclick="add_cart_num({{ goods.0.id }});">+</a>
+                        <input type="text" class="num_show fl" value="{{ goods.1 }}" id="goods_num_{{ goods.0.id }}">
+                        <a href="javascript:;" class="minus fl" onclick="sub_cart_num({{ goods.0.id }});">-</a>
+                    </div>
 				</li>
 				<li class="col07" id="goods_{{ goods.0.id }}">{{ goods.2 }}元</li>
 				<li class="col08"><a href="{% url 'cart:del_goods' %}">删除</a></li>
 			</ul>
 		{% endfor %}
 	{% endif %}
+
 	<!--定义修改购物车中数量，勾选状态等操作-->
 	{% csrf_token %}
-	<script type="text/javascript">
+	<script>
 		<!--刷新商品的价格-->
 		$.get('/cart/f_price/',function(data){
 			if(data.code == '200'){
@@ -52,6 +53,7 @@
 				$('#total_price em').html(data.cart_data.all_price + '元')
 			}
 		})
+
 		<!--增加商品的个数-->
 		function add_cart_num(goods_id){
 			<!--获取商品的个数-->
@@ -60,6 +62,7 @@
 			$('#goods_num_' + goods_id).val(parseInt(goods_num) + 1)
 			change_cart_num(goods_id)
 		}
+
 		<!--减少商品个数-->
 		function sub_cart_num(goods_id){
 			<!--获取商品个数-->
@@ -73,6 +76,17 @@
 		}
 
 		<!--修改商品的选择状态-->
+		function change_select(goods_id){
+			goods_select = $('#goods_select_' + goods_id).val()
+			if(goods_select == '1'){
+				$('#goods_select_' + goods_id).val('0')
+			}else{
+				$('#goods_select_' + goods_id).val('1')
+			}
+			change_cart_num(goods_id)
+		}
+
+		<!--修改商品的个数，选择状态-->
 		function change_cart_num(goods_id){
 			var csrf = $('input[name="csrfmiddlewaretoken"]').val()
 			<!--获取商品的个数-->
@@ -94,12 +108,12 @@
 			})
 		}
 	</script>
+
 	<ul class="settlements">
 		<li class="col01"><input type="checkbox" name="" checked=""></li>
 		<li class="col02">全选</li>
 		<li class="col03" id="total_price">合计(不含运费)：<span>¥</span><em>元</em><br></li>
 		<li class="col04"><a href="{% url 'cart:place_order' %}">去结算</a></li>
 	</ul>
-
 
 {% endblock %}
